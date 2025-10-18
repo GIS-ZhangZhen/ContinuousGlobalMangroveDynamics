@@ -197,8 +197,8 @@ def BivariatePloting(var1,var2,gdf,ax,colors,colorrange=np.arange(0.1,1.0,0.1),c
             print(f"Error plotting geometry at index {idx}")
             continue
 
-    lon_min, lon_max = -180, 180  # 经度范围
-    lat_min, lat_max = -41, 31    # 纬度范围
+    lon_min, lon_max = -180, 180  # longitude range
+    lat_min, lat_max = -41, 31    # latitude range
     ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
     if cb:
         cax.imshow(color_array, origin='lower')
@@ -207,6 +207,7 @@ def BivariatePloting(var1,var2,gdf,ax,colors,colorrange=np.arange(0.1,1.0,0.1),c
         cax.set_xticklabels(['0', '1%'])
         cax.set_yticklabels(['0', '1%'])
         cax.set_title('Mean annual rate', fontsize=12)
-        cax.set_xlabel(var1,c="#5d5a5a")  # 替换为你的变量名
-        cax.set_ylabel(var2,c="#5d5a5a")  # 替换为你的变量
+        cax.set_xlabel(var1,c="#5d5a5a")
+        cax.set_ylabel(var2,c="#5d5a5a")
+
     return ax
